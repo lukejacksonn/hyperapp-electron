@@ -1,0 +1,25 @@
+{
+  "name": "hyperapp-electron",
+  "version": "1.0.0",
+  "description": "A minimal Electron/HyperApp starter",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/lukejacksonn/hyperapp-electron",
+  "keywords": [
+    "Electron",
+    "Hyperapp",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Luke Jackson",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  },
+  "dependencies": {
+    "hyperapp": "^0.9.3"
+  }
+}
