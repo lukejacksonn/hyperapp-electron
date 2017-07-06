@@ -13,3 +13,19 @@ body {
   background: #fff;
   color: #00CCFF;
 }
+
+counter- {
+  display: flex;
+  align-items: center;
+}
+
+counter- > *+* {
+  margin-left: .5rem;
+}
+
+button {
+  background: #fff;
+  border: 1px solid #00CCFF;
+  color: #00CCFF;
+  outline: none;
+}

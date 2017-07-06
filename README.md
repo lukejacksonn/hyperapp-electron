@@ -1,10 +1,10 @@
 # hyperapp-electron
 
-![hyperapp-electron-app-screenshot](https://user-images.githubusercontent.com/1457604/27889904-6bb7085c-61e7-11e7-8426-5e2d773b7235.png)
+![hyperapp-electron-app-screenshot](https://user-images.githubusercontent.com/1457604/27892734-4e7ef35a-61f9-11e7-8ecb-6b28a6c26515.png)
 
 **Clone and run for a quick way to see Electron and HyperApp in action.**
 
-This is a minimal Electron application based on the [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick-start) within the Electron documentation. It also has [HyperApp](https://github.com/hyperapp/hyperapp) bundled in and ready to build with.
+This is a minimal Electron application based on the [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick-start) within the Electron documentation. It also has [HyperApp](https://github.com/hyperapp/hyperapp), [LiveReload](https://github.com/napcs/node-livereload) and [Redux Devtools](https://github.com/gaearon/redux-devtools).
 
 A basic Electron application needs just these files:
 

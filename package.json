@@ -21,6 +21,9 @@
     "livereload": "^0.6.2"
   },
   "dependencies": {
-    "hyperapp": "^0.9.3"
+    "electron-devtools-installer": "^2.2.0",
+    "hyperapp": "^0.9.3",
+    "hyperapp-hmr": "^0.1.0",
+    "hyperapp-redux-devtools": "^1.0.4"
   }
 }

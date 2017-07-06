@@ -1,4 +1,5 @@
 const electron = require('electron')
+const { default: installExtension, REDUX_DEVTOOLS } = require('electron-devtools-installer')
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -7,8 +8,9 @@ const BrowserWindow = electron.BrowserWindow
 const path = require('path')
 const url = require('url')
 
+
 // Reload index.html everytime the source files change
-var livereload = require('livereload').createServer()
+const livereload = require('livereload').createServer()
 livereload.watch(path.join(__dirname, 'src'))
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -27,7 +29,11 @@ function createWindow () {
   }))
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
+
+  installExtension(REDUX_DEVTOOLS)
+    .then((name) => console.log(`Added Extension:  ${name}`))
+    .catch((err) => console.log('An error occurred: ', err));
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
