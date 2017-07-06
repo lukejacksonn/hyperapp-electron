@@ -7,6 +7,10 @@ const BrowserWindow = electron.BrowserWindow
 const path = require('path')
 const url = require('url')
 
+// Reload index.html everytime the source files change
+var livereload = require('livereload').createServer()
+livereload.watch(path.join(__dirname, 'src'))
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow

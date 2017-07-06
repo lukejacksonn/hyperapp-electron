@@ -17,7 +17,8 @@
   ],
   "author": "Luke Jackson",
   "devDependencies": {
-    "electron": "~1.6.2"
+    "electron": "~1.6.2",
+    "livereload": "^0.6.2"
   },
   "dependencies": {
     "hyperapp": "^0.9.3"
