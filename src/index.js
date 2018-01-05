@@ -1,40 +1,25 @@
-const { h, app } = require('hyperapp')
+const { app } = require('hyperapp')
+const { main, h1, div, button } = require('@hyperapp/html')
+
 const devtools = require('hyperapp-redux-devtools')
-const persist = require('hyperapp-hmr')
 
-const $title = c => h('h1', {}, c)
-const $subtitle = c => h('h3', {}, c)
-const $list = c => h('ul', {}, c)
-const $item = c => h('li', {}, c)
-const $span = c => h('span', {}, c)
-const $counter = c => h('counter-', {}, c)
-const $button = (p, c) => h('button', p, c)
+const state = {
+  count: 0,
+}
 
-app({
-  state: {
-    count: 0,
-  },
-  actions: {
-    inc: (s,a,d) => ({ count: s.count + 1 }),
-    dec: (s,a,d) => ({ count: s.count - 1 }),
-  },
-  view: (s,a) =>
-    h('main', {}, [
-      $title('hyperapp-electron'),
-      $subtitle('All of the Node.js APIs are available in this file.'),
-      $list([
-        $item(`Node.js ${process.versions.node}`),
-        $item(`Chromium ${process.versions.chrome}`),
-        $item(`Electron ${process.versions.electron}.`),
-      ]),
-      $counter([
-        $button({ onclick: a.inc }, 'INC'),
-        $button({ onclick: a.dec }, 'DEC'),
-        $span(s.count),
-      ])
+const actions = {
+  reset: () => ({ count: 0 }),
+  sum: data => ({ count }) => ({ count: count + data }),
+}
+
+const view = (state, actions) =>
+  main([
+    h1(state.count),
+    div([
+      button({ onclick: e => actions.sum(-1) }, 'Sub'),
+      button({ onclick: e => actions.reset() }, 'Reset'),
+      button({ onclick: e => actions.sum(1) }, 'Add'),
     ]),
-  mixins: [
-    devtools(),
-    persist,
-  ]
-})
+  ])
+
+devtools(app)(state, actions, view, document.body)
